@@ -1,0 +1,3 @@
+[submodule "privateGPT"]
+	path = privateGPT
+	url = git@github.com:imartinez/privateGPT.git
