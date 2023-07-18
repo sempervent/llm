@@ -4,8 +4,8 @@ FROM python:3.10-slim-buster
 EXPOSE 3000
 
 # Install dependencies
-RUN apt-get update \
-    && apt-get install -y \
+RUN apt-get update -yqq \
+    && apt-get install -yqq \
     build-essential \
     curl \
     g++ \
@@ -18,8 +18,8 @@ RUN apt-get update \
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
 # Install Node.js 18.x
-RUN apt-get update \
-    && apt-get install -y nodejs
+RUN apt-get update -yqq \
+    && apt-get install -yqq nodejs
 
 WORKDIR /root/dalai
 
