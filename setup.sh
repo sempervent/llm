@@ -13,6 +13,11 @@
 #>      -h|--help show this help and exit
 #>      -a|--alpaca available models to install: 7B 13B
 #>      -l|--llama available models to install: 7B 13B 30B 65B
+#>
+#>
+#>     To install all, run:
+#>         ./setup.sh --alpaca 7B 13B --llama 7B 13B 30B 65B
+#>
 ## Helper functions
 dco() {
     if docker compose version > /dev/null 2>&1; then
@@ -33,13 +38,13 @@ while (( "$#" )); do
         -a|--alpaca)
             shift
             while [[ "$1" != -* && "$#" -gt 0 ]]; do
-                ALPACA +=("$1")
+                ALPACA+=("$1")
                 shift
             done
             ;;
         -l|--llama)
             shift
-            while [[ "$1" != -* && "$#" - gt 0 ]]; do
+            while [[ "$1" != -* && "$#" -gt 0 ]]; do
                 LLAMA+=("$1")
                 shift
             done
